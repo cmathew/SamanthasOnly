@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.cmathew.samanthasonly"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation "com.android.support:support-core-ui:${rootProject.ext.v4SupportLibVersion}"
+    implementation "com.android.support:support-fragment:${rootProject.ext.v4SupportLibVersion}"
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.v7SupportLibVersion}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.v7SupportLibVersion}"
+    implementation "com.android.support:design:${rootProject.ext.designSupportLibVersion}"
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
+
+    implementation "com.google.dagger:dagger:${rootProject.ext.daggerVersion}"
+    implementation "com.google.dagger:dagger-android-support:${rootProject.ext.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
+    annotationProcessor "com.google.dagger:dagger-android-processor:${rootProject.ext.daggerVersion}"
+
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+
+    testImplementation "junit:junit:${rootProject.ext.jUnitVersion}"
+    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.androidTestRunnerVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"
+}

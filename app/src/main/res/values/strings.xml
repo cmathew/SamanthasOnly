@@ -2,4 +2,23 @@
     <string name="app_name">SamanthasOnly</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="nes_mini_hunt">There was nothing "mini" about the effort you put into getting this for me:</string>
+    <string name="first_ski_trip">We\'ve shared a few days shredding the slopes&#8230;</string>
+    <string name="first_date">Searing buffalo steaks and dipping fondues. We talked about life&#8230;</string>
+    <string name="second_date">Sushi rolls and ice cream for two. We talked about work&#8230;</string>
+    <string name="third_date">Actually, nobody knows what happened on our third date.</string>
+
+    <string name="meet_the_parents_me">Your mom strode down the hall, shook my hand, and looked me in the eye. Your dad just wanted to talk about Notre Dame football.</string>
+    <string name="meet_the_parents_you">You were <b>far</b> too nervous to meet my mom at Terragon.</string>
+
+    <string name="honey_badgers_kickball_zenith">You calling me in the night (Eastern time) to breathlessly announce you\'d won it all</string>
+    <string name="honey_badgers_kickball_nadir">Getting crushed by Shockwave, then surrendering to the Andy Dufresnes</string>
+    <string name="south_bay_sonics_kickball">Turning a corner, you hitting the game-winning RBI</string>
+    <string name="twin_creeks_softball">Best not to talk about our softball experiment...</string>
+
+    <string name="san_francisco_giants_baseball">And of course, we\'ve followed our team through their ups and downs</string>
+
+
 </resources>

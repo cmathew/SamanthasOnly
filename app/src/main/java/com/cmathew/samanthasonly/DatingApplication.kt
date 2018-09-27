@@ -1,19 +1,23 @@
 package com.cmathew.samanthasonly
 
 import android.app.Application
+import com.cmathew.samanthasonly.db.DatingDatabase
 import com.cmathew.samanthasonly.di.ApplicationComponent
 import com.cmathew.samanthasonly.di.DaggerApplicationComponent
+import javax.inject.Inject
 
 class DatingApplication : Application() {
-
+	@Inject
+	lateinit var database: DatingDatabase
+	
 	internal var applicationComponent: ApplicationComponent? = null
-		get() { return applicationComponent }
 
 	override fun onCreate() {
 		super.onCreate()
 
-		this.applicationComponent = DaggerApplicationComponent.builder()
+		applicationComponent = DaggerApplicationComponent.builder()
 				.application(this)
 				.build()
+		applicationComponent!!.inject(this)
 	}
 }

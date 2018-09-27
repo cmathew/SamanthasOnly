@@ -1,6 +1,7 @@
 package com.cmathew.samanthasonly.di
 
 import com.cmathew.samanthasonly.DatingApplication
+import com.cmathew.samanthasonly.NotificationsFragment
 import com.cmathew.samanthasonly.db.NotificationSeeder
 import dagger.BindsInstance
 import dagger.Component
@@ -20,4 +21,7 @@ interface ApplicationComponent {
 	fun datingApplication(): DatingApplication
 
 	fun inject(seeder: NotificationSeeder)
+	fun inject(notifFragment: NotificationsFragment)
+	fun inject(app: DatingApplication)
+
 }

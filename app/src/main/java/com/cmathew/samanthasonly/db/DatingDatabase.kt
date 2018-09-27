@@ -1,4 +1,4 @@
-package com.cmathew.samanthasonly
+package com.cmathew.samanthasonly.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase

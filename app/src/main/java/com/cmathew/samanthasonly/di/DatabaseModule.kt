@@ -1,13 +1,12 @@
 package com.cmathew.samanthasonly.di
 
-import android.app.Application
 import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import com.cmathew.samanthasonly.DatingApplication
-import com.cmathew.samanthasonly.DatingDatabase
-import com.cmathew.samanthasonly.NotificationSeeder
 import com.cmathew.samanthasonly.R
+import com.cmathew.samanthasonly.db.DatingDatabase
+import com.cmathew.samanthasonly.db.NotificationSeeder
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

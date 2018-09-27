@@ -1,4 +1,4 @@
-package com.cmathew.samanthasonly
+package com.cmathew.samanthasonly.db
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert

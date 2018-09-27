@@ -1,7 +1,6 @@
-package com.cmathew.samanthasonly
+package com.cmathew.samanthasonly.db
 
-import android.app.Application
-import java.io.IOException
+import com.cmathew.samanthasonly.DatingApplication
 import javax.inject.Inject
 
 class NotificationSeeder(application: DatingApplication) {

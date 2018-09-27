@@ -1,4 +1,4 @@
-package com.cmathew.samanthasonly
+package com.cmathew.samanthasonly.db
 
 import android.provider.BaseColumns
 

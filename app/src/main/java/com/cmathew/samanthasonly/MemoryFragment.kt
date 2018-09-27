@@ -33,7 +33,7 @@ class MemoryFragment : Fragment() {
 			inflater: LayoutInflater,
 			container: ViewGroup?,
 			savedInstanceState: Bundle?): View? {
-		val rootView = inflater!!.inflate(R.layout.fragment_memory, container, false)
+		val rootView = inflater.inflate(R.layout.fragment_memory, container, false)
 		val textView = rootView.findViewById(R.id.photoUrl) as TextView
 		textView.text = arguments.getString(ARG_PHOTO_URL)
 		return rootView

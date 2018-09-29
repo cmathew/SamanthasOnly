@@ -1,7 +1,7 @@
 package com.cmathew.samanthasonly
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +25,7 @@ class MemoryFragment : Fragment() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		arguments?.let {
-			photoUrl = it.getString(ARG_PHOTO_URL)
+			photoUrl = it.getString(ARG_PHOTO_URL)!!
 		}
 	}
 
@@ -35,7 +35,7 @@ class MemoryFragment : Fragment() {
 			savedInstanceState: Bundle?): View? {
 		val rootView = inflater.inflate(R.layout.fragment_memory, container, false)
 		val textView = rootView.findViewById(R.id.photoUrl) as TextView
-		textView.text = arguments.getString(ARG_PHOTO_URL)
+		textView.text = arguments?.getString(ARG_PHOTO_URL)
 		return rootView
 	}
 }

@@ -1,16 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.cmathew.samanthasonly"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,15 +22,14 @@ android {
 }
 
 dependencies {
-    implementation "com.android.support:support-core-ui:${rootProject.ext.v4SupportLibVersion}"
-    implementation "com.android.support:support-fragment:${rootProject.ext.v4SupportLibVersion}"
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.v7SupportLibVersion}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.v7SupportLibVersion}"
-    implementation "com.android.support:design:${rootProject.ext.designSupportLibVersion}"
+    implementation "androidx.fragment:fragment:${rootProject.ext.fragmentVersion}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ext.appcompatVersion}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.recyclerviewVersion}"
+    implementation "com.google.android.material:material:${rootProject.ext.materialVersion}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraintLayoutVersion}"
 
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJavaVersion}"
 
-    implementation 'com.android.support:support-v4:26.1.0'
     kapt "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
 
@@ -38,17 +38,14 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
     kapt "com.google.dagger:dagger-android-processor:${rootProject.ext.daggerVersion}"
 
-    implementation "android.arch.persistence.room:runtime:$roomVersion"
-    kapt "android.arch.persistence.room:compiler:$roomVersion"
-    implementation "android.arch.persistence.room:rxjava2:$roomVersion"
-
-    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutVersion}"
+    implementation "androidx.room:room-runtime:${rootProject.ext.roomVersion}1"
+    kapt "androidx.room:room-compiler:${rootProject.ext.roomVersion}"
+    implementation "androidx.room:room-rxjava2:${rootProject.ext.roomVersion}"
 
     testImplementation "junit:junit:${rootProject.ext.jUnitVersion}"
-    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.androidTestRunnerVersion}"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    androidTestImplementation "androidx.test:runner:${rootProject.ext.androidTestRunnerVersion}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlin_version}"
 }
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+

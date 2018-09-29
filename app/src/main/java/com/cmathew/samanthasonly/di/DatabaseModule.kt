@@ -1,8 +1,8 @@
 package com.cmathew.samanthasonly.di
 
-import android.arch.persistence.db.SupportSQLiteDatabase
-import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import com.cmathew.samanthasonly.DatingApplication
 import com.cmathew.samanthasonly.R
 import com.cmathew.samanthasonly.db.DatingDatabase
@@ -10,7 +10,6 @@ import com.cmathew.samanthasonly.db.NotificationSeeder
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Completable
-import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Singleton
 

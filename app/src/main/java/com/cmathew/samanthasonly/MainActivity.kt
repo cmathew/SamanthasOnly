@@ -1,68 +1,69 @@
 package com.cmathew.samanthasonly
 
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import android.support.design.widget.BottomSheetBehavior
-import android.support.design.widget.CoordinatorLayout
-import android.widget.LinearLayout
 import butterknife.BindView
 import butterknife.ButterKnife
 
 
 class MainActivity : AppCompatActivity() {
-	@BindView(R.id.matchBottomSheet)
-	lateinit var matchBottomSheet: ConstraintLayout
+    /*
+    @BindView(R.id.matchBottomSheet)
+    lateinit var matchBottomSheet: ConstraintLayout
+    */
+    lateinit var matchBottomSheet: ConstraintLayout
 
-	// var sheetBehavior: BottomSheetBehavior<CoordinatorLayout>
+    // var sheetBehavior: BottomSheetBehavior<CoordinatorLayout>
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
-		ButterKnife.bind(this)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        //ButterKnife.bind(this)
+        //matchBottomSheet = findViewById(R.id.matchBottomSheet)
 
-		setupToolbar()
+        setupToolbar()
 
-		/*
-		private lateinit var mSectionsPagerAdapter: MemoryPagerAdapter
-		mSectionsPagerAdapter = MemoryPagerAdapter(supportFragmentManager)
-		container.adapter = mSectionsPagerAdapter
-		*/
-	}
+        /*
+        private lateinit var mSectionsPagerAdapter: MemoryPagerAdapter
+        mSectionsPagerAdapter = MemoryPagerAdapter(supportFragmentManager)
+        container.adapter = mSectionsPagerAdapter
+        */
+    }
 
-	override fun onResume() {
-		super.onResume()
+    override fun onResume() {
+        super.onResume()
 
 //		var sheetBehavior = BottomSheetBehavior.from(matchBottomSheet)
 //		sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-	}
+    }
 
-	override fun onCreateOptionsMenu(menu: Menu): Boolean {
-		menuInflater.inflate(R.menu.menu_main, menu)
-		return true
-	}
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
 
-	override fun onOptionsItemSelected(item: MenuItem): Boolean {
-		val id = item.itemId
-		if (id == R.id.action_notifications) {
-			val notifsFrag = NotificationsFragment()
-			val fragmentMgr: FragmentManager = supportFragmentManager
-			fragmentMgr.beginTransaction().replace(R.id.mainContent, notifsFrag).commit()
-			return true
-		}
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.action_notifications) {
+            val notifsFrag = NotificationsFragment()
+            val fragmentMgr: FragmentManager = supportFragmentManager
+            fragmentMgr.beginTransaction().replace(R.id.mainContent, notifsFrag).commit()
+            return true
+        }
 
-		return super.onOptionsItemSelected(item)
-	}
+        return super.onOptionsItemSelected(item)
+    }
 
-	private fun setupToolbar() {
-		val toolbar = findViewById<Toolbar>(R.id.toolbarMain)
-		toolbar.title = "beer and fear"
-		setSupportActionBar(toolbar)
-	}
+    private fun setupToolbar() {
+        val toolbar = findViewById<Toolbar>(R.id.toolbarMain)
+        toolbar.title = "beer and fear"
+        setSupportActionBar(toolbar)
+    }
 
 /*
 override fun onNavigationItemSelected(item: MenuItem): Boolean {

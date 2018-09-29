@@ -30,4 +30,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <include
+        android:id="@+id/matchBottomSheet"
+        layout="@layout/bottom_sheet_match"/>
+
 </android.support.design.widget.CoordinatorLayout>

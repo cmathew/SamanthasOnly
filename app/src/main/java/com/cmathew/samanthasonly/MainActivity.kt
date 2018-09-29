@@ -1,16 +1,30 @@
 package com.cmathew.samanthasonly
 
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
+import android.support.design.widget.BottomSheetBehavior
+import android.support.design.widget.CoordinatorLayout
+import android.widget.LinearLayout
+import butterknife.BindView
+import butterknife.ButterKnife
+
 
 class MainActivity : AppCompatActivity() {
+	@BindView(R.id.matchBottomSheet)
+	lateinit var matchBottomSheet: ConstraintLayout
+
+	// var sheetBehavior: BottomSheetBehavior<CoordinatorLayout>
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
+		ButterKnife.bind(this)
+
 		setupToolbar()
 
 		/*
@@ -18,6 +32,13 @@ class MainActivity : AppCompatActivity() {
 		mSectionsPagerAdapter = MemoryPagerAdapter(supportFragmentManager)
 		container.adapter = mSectionsPagerAdapter
 		*/
+	}
+
+	override fun onResume() {
+		super.onResume()
+
+//		var sheetBehavior = BottomSheetBehavior.from(matchBottomSheet)
+//		sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
 	}
 
 	override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/matchActionContainer"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="56dp"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/matchPhoto">
+
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="@dimen/match_action_icon_size"
+        android:layout_height="@dimen/match_action_icon_size"
+        android:src="@drawable/star"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/favoriteIcon"/>
+
+    <ImageView
+        android:id="@+id/favoriteIcon"
+        android:layout_width="@dimen/match_action_icon_size"
+        android:layout_height="@dimen/match_action_icon_size"
+        android:src="@drawable/favorite"
+        app:layout_constraintLeft_toRightOf="@+id/starIcon"
+        app:layout_constraintRight_toLeftOf="@+id/flameIcon"/>
+
+    <ImageView
+        android:id="@+id/flameIcon"
+        android:layout_width="@dimen/match_action_icon_size"
+        android:layout_height="@dimen/match_action_icon_size"
+        android:src="@drawable/flame"
+        app:layout_constraintLeft_toRightOf="@id/favoriteIcon"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
+
+

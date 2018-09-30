@@ -30,7 +30,7 @@ class NotificationSeeder(application: DatingApplication) {
 				type = NEW_MESSAGE,
 				extras = messageExtras)
 
-		listOf(welcomeNote, matchNote, messageNote).forEach { notification ->
+		listOf(messageNote, matchNote, welcomeNote).forEach { notification ->
 			database.notificationDao().insert(notification)
 		}
 	}

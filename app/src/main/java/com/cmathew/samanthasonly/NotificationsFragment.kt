@@ -38,13 +38,13 @@ class NotificationsFragment : Fragment() {
 				val doNext = when (item.type) {
 					NEW_MATCH -> {
 						val matchIntent = Intent(activity, MatchActivity::class.java)
-						val matchId = item.extras.getInt("match_id")
+						val matchId = item.extras?.getInt("match_id")
 						matchIntent.putExtra("EXTRA_MATCH_ID", matchId)
 						startActivity(matchIntent)
 					}
 					NEW_MESSAGE -> {
-						val messageIntent = Intent(activity, MatchActivity::class.java)
-						val messageId = item.extras.getInt("message_id")
+						val messageIntent = Intent(activity, MessageActivity::class.java)
+						val messageId = item.extras?.getInt("message_id")
 						messageIntent.putExtra("EXTRA_MESSAGE_ID", messageId)
 						startActivity(messageIntent)
 					}

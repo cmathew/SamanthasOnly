@@ -31,6 +31,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJavaVersion}"
     implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
 
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     kapt "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"
 
@@ -48,5 +50,3 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlin_version}"
 }
-
-

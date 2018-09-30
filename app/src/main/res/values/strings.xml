@@ -5,6 +5,8 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="sammy_message">"Hey baby &lt;3"</string>
+
     <string name="error_notification">Something went wrong.</string>
 
     <string name="nes_mini_hunt">There was nothing "mini" about the effort you put into getting this for me:</string>

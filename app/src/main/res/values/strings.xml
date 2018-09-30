@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SamanthasOnly</string>
+    <string name="app_name">SO</string>
     <string name="database_name">dating</string>
     <string name="action_notifications">Notifications</string>
     <string name="section_format">Hello World from section: %1$d</string>

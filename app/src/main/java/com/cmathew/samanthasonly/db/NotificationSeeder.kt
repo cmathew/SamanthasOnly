@@ -1,6 +1,8 @@
 package com.cmathew.samanthasonly.db
 
 import com.cmathew.samanthasonly.DatingApplication
+import com.cmathew.samanthasonly.db.NotificationContract.NotificationType.*
+import org.json.JSONObject
 import javax.inject.Inject
 
 class NotificationSeeder(application: DatingApplication) {
@@ -12,10 +14,23 @@ class NotificationSeeder(application: DatingApplication) {
 	}
 
 	fun seed() {
-		val notification1 = Notification(null, "You have a new match!", 0)
-		val notification2 = Notification(null, "Welcome to Samanthas Only.", 0)
+		val welcomeNote = Notification(
+				message = "Welcome to Samanthas Only.",
+				type = WELCOME)
 
-		listOf(notification1, notification2).forEach { notification ->
+		val matchExtras = JSONObject("{ \"match_id\": 1}")
+		val matchNote = Notification(
+				message = "You have a new match.",
+				type = NEW_MATCH,
+				extras = matchExtras)
+
+		val messageExtras = JSONObject("{ \"message_id\": 1}")
+		val messageNote = Notification(
+				message = "You have a new message!",
+				type = NEW_MESSAGE,
+				extras = messageExtras)
+
+		listOf(welcomeNote, matchNote, messageNote).forEach { notification ->
 			database.notificationDao().insert(notification)
 		}
 	}

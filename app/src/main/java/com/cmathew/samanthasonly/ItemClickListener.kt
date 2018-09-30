@@ -1,5 +1,5 @@
 package com.cmathew.samanthasonly
 
-interface ItemClickListener {
-	fun onItemClick(position: Int)
+interface ItemClickListener<T> {
+	fun onItemClick(item: T)
 }

@@ -43,6 +43,8 @@ dependencies {
     kapt "androidx.room:room-compiler:${rootProject.ext.roomVersion}"
     implementation "androidx.room:room-rxjava2:${rootProject.ext.roomVersion}"
 
+    compile 'com.github.jinatonic.confetti:confetti:1.1.1'
+    
     testImplementation "junit:junit:${rootProject.ext.jUnitVersion}"
     androidTestImplementation "androidx.test:runner:${rootProject.ext.androidTestRunnerVersion}"
     androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ext.espressoVersion}"

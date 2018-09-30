@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import butterknife.BindView
-import butterknife.ButterKnife
+import butterknife.ButterKnife.bind
 
 class MatchToolbar @JvmOverloads constructor(
 		context: Context,
@@ -22,13 +22,9 @@ class MatchToolbar @JvmOverloads constructor(
 
 	init {
 		val padding = resources.getDimensionPixelSize(R.dimen.space_medium)
-		setPadding(padding, padding, padding, padding)
+		setPadding(0, padding, padding, padding)
 		inflate(context, R.layout.toolbar_match, this)
-		ButterKnife.bind(this)
-
-//		val params = layoutParams as AppBarLayout.LayoutParams
-//		params.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL or AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
-//		layoutParams = params
+		bind(this)
 
 		matchName.text = "Chris M."
 		matchAge.text = "Age 28"

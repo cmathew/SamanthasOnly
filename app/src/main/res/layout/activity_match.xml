@@ -17,7 +17,7 @@
 			android:scaleType="fitStart"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:src="@drawable/chicago" />
+			android:src="@drawable/kickball" />
 	</androidx.core.widget.NestedScrollView>
 
 	<com.google.android.material.appbar.AppBarLayout
@@ -39,6 +39,6 @@
 		android:layout_gravity="bottom|end"
 		android:layout_margin="@dimen/fab_margin"
 		app:fabSize="normal"
-		app:srcCompat="@drawable/favorite" />
+		app:srcCompat="@drawable/favorite_light" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

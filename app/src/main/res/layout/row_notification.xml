@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:padding="@dimen/space_small">
@@ -17,7 +20,6 @@
         android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         tools:text="You have a message." />
 </LinearLayout>

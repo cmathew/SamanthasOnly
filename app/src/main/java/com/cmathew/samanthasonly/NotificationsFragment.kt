@@ -1,6 +1,7 @@
 package com.cmathew.samanthasonly
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -30,7 +31,13 @@ class NotificationsFragment : Fragment() {
 
 	override fun onAttach(context: Context) {
 		(context.applicationContext as DatingApplication).applicationComponent!!.inject(this)
-		notificationAdapter = NotificationAdapter(context)
+		notificationAdapter = NotificationAdapter(context, object : ItemClickListener {
+			override fun onItemClick(position: Int) {
+				val matchIntent = Intent(activity, MatchActivity::class.java)
+				startActivity(matchIntent)
+			}
+		})
+
 		super.onAttach(context)
 	}
 
@@ -71,7 +78,9 @@ class NotificationsFragment : Fragment() {
 		fun newInstance() = NotificationsFragment()
 	}
 
-	inner class NotificationAdapter constructor(private val context: Context) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
+	inner class NotificationAdapter constructor(
+			private val context: Context,
+			private val clickListener: ItemClickListener) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
 		private var notifications: List<Notification> = emptyList()
 
 		override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -83,6 +92,9 @@ class NotificationsFragment : Fragment() {
 		override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 			val note = notifications[position]
 			holder.messageView.text = note.message
+			holder.itemView.setOnClickListener {
+				clickListener.onItemClick(position)
+			}
 		}
 
 		override fun getItemCount(): Int {

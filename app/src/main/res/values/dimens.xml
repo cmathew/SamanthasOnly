@@ -4,5 +4,7 @@
     <dimen name="space_medium">16dp</dimen>
 
     <dimen name="match_action_icon_size">56dp</dimen>
+    <dimen name="notification_icon_size">48dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
 </resources>

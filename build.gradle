@@ -28,6 +28,7 @@ ext {
     roomVersion = '2.0.0-rc01'
 
     rxJavaVersion = '2.2.2'
+    rxAndroidVersion = '2.1.0'
     daggerVersion = '2.14.1'
     butterKnifeVersion = '8.8.1'
 

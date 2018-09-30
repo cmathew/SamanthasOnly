@@ -5,6 +5,8 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="error_notification">Something went wrong.</string>
+
     <string name="nes_mini_hunt">There was nothing "mini" about the effort you put into getting this for me:</string>
     <string name="first_ski_trip">We\'ve shared a few days shredding the slopes&#8230;</string>
     <string name="first_date">Searing buffalo steaks and dipping fondues. We talked about life&#8230;</string>
@@ -20,9 +22,5 @@
     <string name="twin_creeks_softball">Best not to talk about our softball experiment...</string>
 
     <string name="san_francisco_giants_baseball">And of course, we\'ve followed our team through their ups and downs</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_match">MatchActivity</string>
 
 </resources>

@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.action_notifications) {
-            val notifsFrag = NotificationsFragment()
+            val notifsFrag = NotificationsFragment.newInstance()
             val fragmentMgr: FragmentManager = supportFragmentManager
             fragmentMgr.beginTransaction().replace(R.id.mainContent, notifsFrag).commit()
             return true

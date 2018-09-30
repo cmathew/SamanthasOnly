@@ -29,6 +29,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.constraintLayoutVersion}"
 
     implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxJavaVersion}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxAndroidVersion}"
 
     kapt "com.jakewharton:butterknife-compiler:${rootProject.ext.butterKnifeVersion}"
     implementation "com.jakewharton:butterknife:${rootProject.ext.butterKnifeVersion}"

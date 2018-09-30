@@ -21,7 +21,6 @@ class DatabaseModule {
 	fun provideDatabase(application: DatingApplication): DatingDatabase {
 		val dbName = application.resources.getString(R.string.database_name)
 		return Room.databaseBuilder(application, DatingDatabase::class.java, dbName)
-				.allowMainThreadQueries()
 				.addCallback(object : RoomDatabase.Callback() {
 					override fun onCreate(db: SupportSQLiteDatabase) {
 						super.onCreate(db)

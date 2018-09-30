@@ -12,6 +12,11 @@ class NotificationSeeder(application: DatingApplication) {
 	}
 
 	fun seed() {
-		database.notificationDao().insert(Notification(null, "hello world", 0))
+		val notification1 = Notification(null, "You have a new match!", 0)
+		val notification2 = Notification(null, "Welcome to Samanthas Only.", 0)
+
+		listOf(notification1, notification2).forEach { notification ->
+			database.notificationDao().insert(notification)
+		}
 	}
 }

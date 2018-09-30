@@ -10,8 +10,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import com.cmathew.samanthasonly.db.DatingDatabase
 import com.cmathew.samanthasonly.db.Notification
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class NotificationsFragment : Fragment() {
@@ -21,6 +26,8 @@ class NotificationsFragment : Fragment() {
 	@Inject
 	lateinit var database: DatingDatabase
 
+	val noteSubs: CompositeDisposable = CompositeDisposable()
+
 	override fun onAttach(context: Context) {
 		(context.applicationContext as DatingApplication).applicationComponent!!.inject(this)
 		notificationAdapter = NotificationAdapter(context)
@@ -28,7 +35,7 @@ class NotificationsFragment : Fragment() {
 	}
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-														savedInstanceState: Bundle?): View? {
+							  savedInstanceState: Bundle?): View? {
 		val view: View = inflater.inflate(R.layout.fragment_notifications, container, false)
 		notificationList = view.findViewById(R.id.notificationList)
 		notificationList.layoutManager = LinearLayoutManager(context)
@@ -42,9 +49,21 @@ class NotificationsFragment : Fragment() {
 	override fun onStart() {
 		super.onStart()
 
-		val notifications = database.notificationDao().getAll()
-		notificationAdapter.notifications = notifications
-		notificationAdapter.notifyDataSetChanged()
+		noteSubs.add(
+				database.notificationDao().getAll()
+						.observeOn(AndroidSchedulers.mainThread())
+						.subscribeOn(Schedulers.io())
+						.subscribe({ notifications ->
+							notificationAdapter.setNotifications(notifications)
+							notificationAdapter.notifyDataSetChanged()
+						}, {
+							Toast.makeText(context, R.string.error_notification, Toast.LENGTH_SHORT).show()
+						}))
+	}
+
+	override fun onStop() {
+		super.onStop()
+		noteSubs.dispose()
 	}
 
 	companion object {
@@ -53,7 +72,7 @@ class NotificationsFragment : Fragment() {
 	}
 
 	inner class NotificationAdapter constructor(private val context: Context) : RecyclerView.Adapter<NotificationAdapter.ViewHolder>() {
-		var notifications: List<Notification> = emptyList()
+		private var notifications: List<Notification> = emptyList()
 
 		override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 			val layoutInflater = LayoutInflater.from(context)
@@ -68,6 +87,10 @@ class NotificationsFragment : Fragment() {
 
 		override fun getItemCount(): Int {
 			return notifications.size
+		}
+
+		fun setNotifications(items: List<Notification>) {
+			notifications = items
 		}
 
 		inner class ViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {

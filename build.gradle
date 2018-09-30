@@ -16,6 +16,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
     }
 }
 
@@ -30,13 +33,12 @@ ext {
     rxJavaVersion = '2.2.2'
     rxAndroidVersion = '2.1.0'
     daggerVersion = '2.14.1'
-    butterKnifeVersion = '8.8.1'
+    butterKnifeVersion = '9.0.0-SNAPSHOT'
 
     jUnitVersion = '4.12'
     androidTestRunnerVersion = '1.1.0-alpha4'
     espressoVersion = '3.1.0-alpha4'
 }
-
 
 task clean(type: Delete) {
     delete rootProject.buildDir

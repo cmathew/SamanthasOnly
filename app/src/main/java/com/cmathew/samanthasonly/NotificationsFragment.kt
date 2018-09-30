@@ -3,22 +3,21 @@ package com.cmathew.samanthasonly
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.cmathew.samanthasonly.db.DatingDatabase
 import com.cmathew.samanthasonly.db.Notification
-import com.cmathew.samanthasonly.db.NotificationContract
-import com.cmathew.samanthasonly.db.NotificationContract.NotificationType.*
+import com.cmathew.samanthasonly.db.NotificationContract.NotificationType.NEW_MATCH
+import com.cmathew.samanthasonly.db.NotificationContract.NotificationType.NEW_MESSAGE
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -39,18 +38,17 @@ class NotificationsFragment : Fragment() {
 					NEW_MATCH -> {
 						val matchIntent = Intent(activity, MatchActivity::class.java)
 						val matchId = item.extras?.getInt("match_id")
-						matchIntent.putExtra("EXTRA_MATCH_ID", matchId)
+						matchIntent.putExtra(EXTRA_MATCH_ID, matchId)
 						startActivity(matchIntent)
 					}
 					NEW_MESSAGE -> {
 						val messageIntent = Intent(activity, MessageActivity::class.java)
 						val messageId = item.extras?.getInt("message_id")
-						messageIntent.putExtra("EXTRA_MESSAGE_ID", messageId)
+						messageIntent.putExtra(EXTRA_MESSAGE_ID, messageId)
 						startActivity(messageIntent)
 					}
 					else -> {
-						val matchIntent = Intent(activity, MatchActivity::class.java)
-						startActivity(matchIntent)
+						Toast.makeText(context, "Click around!", Toast.LENGTH_SHORT).show()
 					}
 				}
 			}

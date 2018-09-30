@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorPrimary"
-    android:padding="@dimen/space_medium"
-    app:layout_scrollFlags="scroll|enterAlways"
-    >
+    tools:parentTag="androidx.appcompat.widget.Toolbar">
 
     <TableLayout
         android:id="@+id/matchInfo"
@@ -23,30 +19,30 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/matchName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                tools:text="Chris M."
-                />
+                tools:text="Chris M." />
 
             <TextView
+                android:id="@+id/matchDistance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                tools:text="0 miles away"
-                />
+                tools:text="0 miles away" />
         </TableRow>
 
         <TableRow>
 
             <TextView
+                android:id="@+id/matchAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Age 28"
-                />
+                tools:text="Age 28" />
 
         </TableRow>
     </TableLayout>
 
-</androidx.appcompat.widget.Toolbar>
+</merge>

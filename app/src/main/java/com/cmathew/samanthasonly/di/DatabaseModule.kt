@@ -1,8 +1,8 @@
 package com.cmathew.samanthasonly.di
 
-import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.cmathew.samanthasonly.DatingApplication
 import com.cmathew.samanthasonly.R
 import com.cmathew.samanthasonly.db.DatingDatabase

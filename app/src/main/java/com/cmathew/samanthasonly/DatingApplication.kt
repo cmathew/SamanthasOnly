@@ -9,7 +9,7 @@ import javax.inject.Inject
 class DatingApplication : Application() {
 	@Inject
 	lateinit var database: DatingDatabase
-	
+
 	internal var applicationComponent: ApplicationComponent? = null
 
 	override fun onCreate() {

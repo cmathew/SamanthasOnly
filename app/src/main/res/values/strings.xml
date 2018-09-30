@@ -3,8 +3,8 @@
     <string name="database_name">dating</string>
     <string name="action_notifications">Notifications</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_main">MainActivity</string>
 
+    <string name="title_activity_message">Message from Chris M.</string>
     <string name="sammy_message">"Hey baby &lt;3"</string>
 
     <string name="error_notification">Something went wrong.</string>
